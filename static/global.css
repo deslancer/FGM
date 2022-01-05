@@ -1,7 +1,38 @@
+@font-face {
+    font-family: "svnfont0";
+    src: url("./fonts/svnfont00.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "svnfont1";
+    src: url("./fonts/svnfont01.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "svnfont2";
+    src: url("./fonts/svnfont02.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "svnfont3";
+    src: url("./fonts/svnfont03.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "svnfont4";
+    src: url("./fonts/svnfont04.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
 html, body {
     margin: 0;
     padding: 0;
     color: #25282d;
+    font-family: 'Open Sans', sans-serif;
 }
 
 canvas {
@@ -15,6 +46,10 @@ canvas {
     user-select: none;
     outline: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+}
+P {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .main-nav {
     flex: 1;
@@ -30,4 +65,19 @@ canvas {
     margin: 1rem 0;
     border-bottom: 1px solid #eaeaea;
 }
-
+.profile_card:hover {
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+    box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+    cursor: pointer;
+}
+.subheader {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.icon-font {
+    font-family: "svnfont1", sans-serif;
+}

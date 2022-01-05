@@ -8,6 +8,12 @@
         Nav,
         NavItem,
         NavLink,
+        Table,
+        Button,
+        Modal,
+        ModalHeader,
+        ModalBody,
+        ModalFooter
     } from 'sveltestrap';
     import Profiles from '../view/Profiles.svelte'
     import Dimensions from "../view/Dimensions.svelte";
@@ -20,6 +26,9 @@
 
     let el;
     let current = Profiles;
+
+    let open = false;
+    const toggle = () => (open = !open);
 
     onMount(() => {
         createScene(el)
@@ -68,13 +77,13 @@
                         3. Precious metal
                     </a>
                 </NavItem>
-                <NavItem>
+               <!-- <NavItem>
                     <a class="nav-link border" aria-current="page" href="#"
                        class:active="{current === Edges}"
                        on:click={()=>current = Edges}>
                         4. Grooves / edges
                     </a>
-                </NavItem>
+                </NavItem>-->
                 <NavItem>
                     <a class="nav-link border" aria-current="page" href="#"
                        class:active="{current === Stone}"
@@ -99,6 +108,79 @@
         </Col>
         <Col sm="5">
             <svelte:component this={current}/>
+        </Col>
+    </Row>
+    <Row>
+        <Col sm="7">
+            <Row class="bg-light align-items-center">
+                <Col sm="7">
+                    <Table borderless size="sm">
+                        <tfoot class="mt-2">
+                        <tr>
+                            <th>Total:</th>
+                            <th>777$</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr>
+                            <td>Ring 1</td>
+                            <td>111$</td>
+                        </tr>
+                        <tr>
+                            <td>Ring 2</td>
+                            <td>666$</td>
+                        </tr>
+                        </tbody>
+                    </Table>
+                </Col>
+                <Col sm="5">
+                    <Button size="sm"><i class="fas px-2 fa-times"></i>Reset configuration</Button>
+                    <Button on:click={toggle} size="sm"><i class="fas px-2 fa-list"></i>Your rings</Button>
+                    <Modal isOpen={open} {toggle} size="lg">
+                        <ModalHeader {toggle}>Modal title</ModalHeader>
+                        <ModalBody>
+                            <Table>
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                </tbody>
+                            </Table>
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button color="primary" on:click={toggle}>Do Something</Button>
+                            <Button color="secondary" on:click={toggle}>Cancel</Button>
+                        </ModalFooter>
+                    </Modal>
+                </Col>
+            </Row>
+
+        </Col>
+        <Col sm="5">
+
         </Col>
     </Row>
 </Container>

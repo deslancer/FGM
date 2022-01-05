@@ -1,35 +1,28 @@
 <script lang="ts">
     import {
-        Card,
-        CardBody,
-        CardHeader,
-        CardTitle,
+        Row,
+        Col
     } from 'sveltestrap';
+
+    let ring_profiles:Array<any> = [
+        { id: '3', caption: 'Profile 1', src: '/images/1.png' , name: '1' },
+        { id: '4', caption: 'Profile 2', src: '/images/2.png' , name: '2' },
+        { id: '5', caption: 'Profile 3', src: '/images/3.png' , name: '3' },
+        { id: '6', caption: 'Profile 4', src: '/images/4.png' , name: '4' },
+        { id: '7', caption: 'Profile 5', src: '/images/5.png' , name: '5' }
+    ];
+
+
 </script>
-<Card class="mb-3">
-    <CardHeader>
-        <CardTitle>Profile</CardTitle>
-    </CardHeader>
-    <CardBody>
-        <figure class="figure border p-3">
-            <figcaption class="figure-caption pb-3 text-center">Profile 1</figcaption>
-            <img src="/images/1.png" width="100" class="figure-img img-fluid rounded" alt="exportprofile">
-        </figure>
-        <figure class="figure border p-3">
-            <figcaption class="figure-caption pb-3 text-center">Profile 2</figcaption>
-            <img src="/images/2.png" width="100" class="figure-img img-fluid rounded" alt="exportprofile">
-        </figure>
-        <figure class="figure border p-3">
-            <figcaption class="figure-caption pb-3 text-center">Profile 3</figcaption>
-            <img src="/images/3.png" width="100" class="figure-img img-fluid rounded" alt="exportprofile">
-        </figure>
-        <figure class="figure border p-3">
-            <figcaption class="figure-caption pb-3 text-center">Profile 4</figcaption>
-            <img src="/images/4.png" width="100" class="figure-img img-fluid rounded" alt="exportprofile">
-        </figure>
-        <figure class="figure border p-3">
-            <figcaption class="figure-caption pb-3 text-center">Profile 5</figcaption>
-            <img src="/images/5.png" width="100" class="figure-img img-fluid rounded" alt="exportprofile">
-        </figure>
-    </CardBody>
-</Card>
+<Row>
+    <Col>
+        <p class="subheader">Profile</p>
+        {#each ring_profiles as profile}
+            <figure class="figure border p-3 m-2 profile_card">
+                <figcaption class="figure-caption pb-3 text-center">{profile.caption}</figcaption>
+                <img src="{profile.src}" width="100" class="figure-img img-fluid rounded" alt="{profile.name}">
+            </figure>
+        {/each}
+    </Col>
+</Row>
+
