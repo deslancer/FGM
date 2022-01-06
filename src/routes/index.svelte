@@ -102,7 +102,7 @@
 
         </Col>
     </Row>
-    <Row class="mt-5">
+    <Row class="mt-5 row-cols-2">
         <Col sm="7">
             <canvas bind:this={el}></canvas>
         </Col>
