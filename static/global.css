@@ -1,3 +1,7 @@
+:root {
+    --primary-color: #a09fa7;
+    --secondary-color: #25282d;
+}
 @font-face {
     font-family: "svnfont0";
     src: url("./fonts/svnfont00.ttf") format("truetype");
@@ -34,7 +38,10 @@ html, body {
     color: #25282d;
     font-family: 'Open Sans', sans-serif;
 }
-
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
 canvas {
     width: 100%;
     min-height: 400px;
@@ -47,7 +54,7 @@ canvas {
     outline: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
 }
-P {
+p {
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -63,7 +70,7 @@ P {
 }
 .divider {
     margin: 1rem 0;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #dedede;
 }
 .profile_card:hover {
     -webkit-box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
@@ -89,4 +96,100 @@ P {
 #serif {
     font-size: 18px;
     font-family: "svnfont4", sans-serif;
+}
+.summary_block {
+    background-color: #e9eaef;
+}
+.subnav_bar {
+    background-color: #e9eaef;
+    display: flex;
+}
+.add_rings {
+    display: inline-flex;
+    overflow: hidden;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    font-size: 12px;
+    border-radius: 30px;
+    padding: 7px 15px;
+    margin-right: 15px;
+    color: black;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+.ring-mode {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+    font-size: 13px;
+}
+.ring-mode-connect {
+    text-align: center;
+    height: 64px;
+}
+.ring-mode-connect > a {
+    display: inline-block;
+    color: var(--secondary-color);
+}
+.ring-mode-connect a .svg-icon-connect{
+    background: #fff;
+ }
+.ring-mode-connect a.connect_active .svg-icon-connect {
+    background: var(--primary-color);
+
+    color: #fff;
+}
+.ring-mode-connect .svg-icon {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 8px 0;
+    pointer-events: none;
+    border: 1px solid var(--primary-color);
+}
+.ring-mode-connect .connect-label {
+    display: block;
+    color: #999;
+}
+.ring-mode .ring-mode-ring {
+    text-align: center;
+    padding: 0 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    position: relative;
+}
+.add-ring {
+    background: #fff;
+    border: 1px solid var(--primary-color);
+    font-size: 12px;
+    display: inline-flex;
+    overflow: hidden;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 7px 15px;
+    margin-right: 15px;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    position: relative;
+    z-index: 1;
+}
+.add-ring span {
+    line-height: 16px;
+    white-space: normal;
+    font-weight: 700;
+    max-width: 120px;
+}
+.add-ring > .svg-icon, .add-ring > i {
+    margin-right: 8px;
+}
+.svg-icon {
+    display: inline-block;
+    line-height: 1em;
+    vertical-align: middle;
 }
