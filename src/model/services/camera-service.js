@@ -8,11 +8,9 @@ export class CameraService{
     }
 
     createPerspectiveCam(){
-        const camera = new BABYLON.ArcRotateCamera("Camera", 2.65, 1.4, 2, new BABYLON.Vector3(0, 0, 2), this.scene);
-        camera.setTarget(BABYLON.Vector3.Zero());
-        camera.lowerRadiusLimit = 2;
-        camera.upperRadiusLimit = 2;
-        camera.useAutoRotationBehavior = true;
+        const camera = new BABYLON.ArcRotateCamera("Camera", 2.65, 1.4, 50, new BABYLON.Vector3(0, 0, 0), this.scene);
+        camera.lowerRadiusLimit = 20;
+        camera.upperRadiusLimit = 100;
         camera.attachControl(this.canvas, true);
         return camera
     }
