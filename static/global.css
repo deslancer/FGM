@@ -1,10 +1,312 @@
+:root {
+    --primary-color: #a09fa7;
+    --secondary-color: #25282d;
+}
+@font-face {
+    font-family: "svnfont0";
+    src: url("./fonts/svnfont00.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "svnfont1";
+    src: url("./fonts/svnfont01.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "svnfont2";
+    src: url("./fonts/svnfont02.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "svnfont3";
+    src: url("./fonts/svnfont03.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: "svnfont4";
+    src: url("./fonts/svnfont04.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
 html, body {
     margin: 0;
     padding: 0;
+    color: #25282d;
+    font-family: 'Open Sans', sans-serif;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+canvas {
+    width: 100%;
+    min-height: 400px;
+    display: block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+}
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.fs-1 {
+    font-size: 1rem;
+}
+.fs-2 {
+    font-size: 2rem;
+}
+.main-nav {
+    flex: 1;
+}
+.main-nav .nav-item {
+    flex-grow: 1;
+    text-align: center;
+}
+.nav-link {
+    color: #25282d;
+}
+.divider {
+    margin: 1rem 0;
+    border-bottom: 1px solid #dedede;
+}
+.profile_card:hover {
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+    box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+    cursor: pointer;
+}
+.selected_profile {
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+    box-shadow: 0px 3px 6px 2px rgba(224,221,224,1);
+}
+.subheader {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.icon-font {
+    font-size: 18px;
+    font-family: "svnfont1", sans-serif;
+}
+#cursive {
+    font-size: 18px;
+    font-family: "svnfont0", sans-serif;
+}
+#serif {
+    font-size: 18px;
+    font-family: "svnfont4", sans-serif;
+}
+.summary_block {
+    background-color: #e9eaef;
+}
+.subnav_bar {
+    background-color: #e9eaef;
+    display: flex;
+}
+.add_rings {
+    display: inline-flex;
+    overflow: hidden;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    font-size: 12px;
+    border-radius: 30px;
+    padding: 7px 15px;
+    margin-right: 15px;
+    color: black;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+.ring-mode {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+    font-size: 13px;
+}
+.ring-mode-connect {
+    text-align: center;
+    height: 64px;
+}
+.ring-mode-connect > a {
+    display: inline-block;
+    color: var(--secondary-color);
+}
+.ring-mode-connect a .svg-icon-connect{
+    background: #fff;
+ }
+.ring-mode-connect a.connect_active .svg-icon-connect {
+    background: var(--primary-color);
+
+    color: #fff;
+}
+.ring-mode-connect .svg-icon {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 8px 0;
+    pointer-events: none;
+    border: 1px solid var(--primary-color);
+}
+.ring-mode-connect .connect-label {
+    display: block;
+    color: #999;
+}
+.ring-mode .ring-mode-ring {
+    text-align: center;
+    padding: 0 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    position: relative;
+}
+.add-ring {
+    background: #fff;
+    border: 1px solid var(--primary-color);
+    font-size: 12px;
+    display: inline-flex;
+    overflow: hidden;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 7px 15px;
+    margin-right: 15px;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    position: relative;
+    z-index: 1;
+}
+.add-ring span {
+    line-height: 16px;
+    white-space: normal;
+    font-weight: 700;
+    max-width: 120px;
+}
+.add-ring > .svg-icon, .add-ring > i {
+    margin-right: 8px;
+}
+.svg-icon {
+    display: inline-block;
+    line-height: 1em;
+    vertical-align: middle;
+}
+.loader {
+    --path: var(--secondary-color);
+    --dot: var(--primary-color);
+    --duration: 3s;
+    width: 44px;
+    height: 44px;
+    position: relative;
+}
+.loader:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    background: var(--dot);
+    top: 37px;
+    left: 19px;
+    transform: translate(-18px, -18px);
+    -webkit-animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+.loader svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.loader svg circle {
+    fill: none;
+    stroke: var(--path);
+    stroke-width: 10px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
 }
 
-canvas {
-    width: 100vw;
-    height: 100vh;
+.loader svg circle {
+    stroke-dasharray: 150 50 150 50;
+    stroke-dashoffset: 75;
+    -webkit-animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+@-webkit-keyframes dotRect {
+    25% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(18px, -18px);
+    }
+    75% {
+        transform: translate(0, -36px);
+    }
+    100% {
+        transform: translate(-18px, -18px);
+    }
+}
+@keyframes dotRect {
+    25% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(18px, -18px);
+    }
+    75% {
+        transform: translate(0, -36px);
+    }
+    100% {
+        transform: translate(-18px, -18px);
+    }
+}
+
+@-webkit-keyframes pathCircle {
+    25% {
+        stroke-dashoffset: 125;
+    }
+    50% {
+        stroke-dashoffset: 175;
+    }
+    75% {
+        stroke-dashoffset: 225;
+    }
+    100% {
+        stroke-dashoffset: 275;
+    }
+}
+@keyframes pathCircle {
+    25% {
+        stroke-dashoffset: 125;
+    }
+    50% {
+        stroke-dashoffset: 175;
+    }
+    75% {
+        stroke-dashoffset: 225;
+    }
+    100% {
+        stroke-dashoffset: 275;
+    }
+}
+.loader {
     display: block;
+    margin: auto;
+    top: 45%;
+}
+.question_icon {
+    font-size: 1.5rem;
 }
